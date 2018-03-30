@@ -1,0 +1,79 @@
+#-- USER ----------------------------------------------------------{{{
+[user]
+	name = Marc Bouchard
+	email = mab.bouchard@gmail.com
+
+# }}}
+#-- CREDENTIAL ----------------------------------------------------{{{
+[credential]
+	helper = osxkeychain
+
+# }}}
+#-- CORE ----------------------------------------------------------{{{
+[core]
+	editor = nvim
+	autocrlf = input
+	excludesfile = /Users/marc/.config/git/.gitignore_global
+	# Don't pass output of a command if the output can fit on the screen.
+	pager = less -RFX
+	whitespace = blank-at-eol,blank-at-eof,indent-with-non-tab
+
+# }}}
+#-- MERGE ---------------------------------------------------------{{{
+[merge]
+	tool = nvimdiff
+
+# }}}
+#-- DIFF ----------------------------------------------------------{{{
+[diff]
+	algorithm = histogram
+
+# }}}
+#-- HELP ----------------------------------------------------------{{{
+[help]
+	autocorrect = 1
+
+# }}}
+#-- COLOR ---------------------------------------------------------{{{
+[color]
+	ui = auto
+
+# }}}
+#-- ALIAS ---------------------------------------------------------{{{
+[alias]
+	# Logs
+	lgl = log --pretty=oneline --abbrev-commit --graph --decorate
+	lga = log --graph --oneline --all --decorate
+	lgz = log --abbrev-commit --graph --decorate --pretty=format:'%t (%an): %s'
+	last = log -1 HEAD
+	lg = log --pretty='%Cred%hCreset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph
+	so = show --pretty='%Cred%hCreset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset'
+
+	# Add
+	ap = add -p
+	ai = add -i
+
+	# Branches
+	b = branch
+	bm = branch --merged
+	bnm = branch --no-merged
+    db = branch -d
+	c = checkout
+    cb = checkout -b
+
+	# Staging and commits
+	a = add .
+	com = commit
+	unstage = reset HEAD --
+
+	# Diff
+	d = diff
+	dp = diff --word-diff --unified=10
+	ds = diff --staged
+
+	# Shell commands
+	qm = "!git checkout $1;git merge @{-1}"
+	append = !git cherry-pick $(git merge-base HEAD $1)..$1
+	undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
+
+# }}}

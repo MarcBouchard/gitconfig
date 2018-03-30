@@ -1,0 +1,72 @@
+#-- OSX GENERATED FILES ---------------------------------------------
+._*
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+*.pid
+*.seed
+pids
+Thumbs.db
+ehthumbs.db
+
+
+#-- PACKAGES --------------------------------------------------------
+*.7z
+*.gz
+*.dmg
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+
+#-- COMPILED SOURCES ------------------------------------------------
+*.o
+*.so
+*.com
+*.exe
+*.dll
+*.class
+
+
+#-- LOGS AND DATABASES ----------------------------------------------
+logs
+*.log
+*.sql
+*.sqlite
+
+
+#-- C-TAGS ----------------------------------------------------------
+/tags
+/tags.*
+
+
+#-- PYTHON ----------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+#-- NODE GENERATED FILES/DIRECTORIES --------------------------------
+.npm
+.grunt
+.lock-wscript
+.node_repl_history
+lib-cov
+coverage
+node_modules
+npm-debug.log*
+
+
+#-- BUILD DIRECTORIES -----------------------------------------------
+build/
+build/Release
+dist/
+
+
+#-- SENSITIVE CONFIG FILES ------------------------------------------
+config.json
+
+
