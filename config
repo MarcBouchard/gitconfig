@@ -62,7 +62,7 @@
     cb = checkout -b
 
 	# Staging and commits
-	a = add .
+	a = add
 	com = commit
 	unstage = reset HEAD --
 
