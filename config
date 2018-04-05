@@ -14,7 +14,7 @@
 	editor = nvim
 	autocrlf = input
 	excludesfile = /Users/marc/.config/git/.gitignore_global
-	# Don't pass output of a command if the output can fit on the screen.
+	# Print command outputs to the screen if it fits.
 	pager = less -RFX
 	whitespace = blank-at-eol,blank-at-eof,indent-with-non-tab
 
@@ -48,7 +48,8 @@
 	ap = add -p
 	ai = add -i
 
-	# Branches
+
+	# Branches.
 	b = branch
 	bm = branch --merged
 	bnm = branch --no-merged
@@ -61,7 +62,8 @@
 	com = commit
 	unstage = reset HEAD --
 
-	# Diff
+
+	# Diff.
 	d = diff
 	dp = diff --word-diff --unified=10
 	ds = diff --staged
