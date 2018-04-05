@@ -41,13 +41,6 @@
 # }}}
 #-- ALIAS ---------------------------------------------------------{{{
 [alias]
-	# Logs
-	lgl = log --pretty=oneline --abbrev-commit --graph --decorate
-	lga = log --graph --oneline --all --decorate
-	lgz = log --abbrev-commit --graph --decorate --pretty=format:'%t (%an): %s'
-	last = log -1 HEAD
-	lg = log --pretty='%Cred%hCreset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph
-	so = show --pretty='%Cred%hCreset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset'
 
 	# Add
 	ap = add -p
@@ -71,7 +64,20 @@
 	dp = diff --word-diff --unified=10
 	ds = diff --staged
 
-	# Shell commands
+
+	#------------------------------------------------------------- Logs --
+	l = log --graph --oneline --all --decorate
+	#
+	# Show last commit meta info.
+	last = log -1 HEAD
+
+	# Custom show last commit changes.
+	so = show --pretty='%C(yellow)%h%Creset |%C(yellow)%d%Creset | %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset %n%n%s'
+
+	# lgz = log --abbrev-commit --graph --decorate --pretty=format:'%t (%an): %s'
+
+
+	# Shell commands.
 	qm = "!git checkout $1;git merge @{-1}"
 	append = !git cherry-pick $(git merge-base HEAD $1)..$1
 	undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
