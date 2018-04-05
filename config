@@ -42,7 +42,8 @@
 #-- ALIAS ---------------------------------------------------------{{{
 [alias]
 
-	# Add
+	# Add.
+	a = add
 	ap = add -p
 	ai = add -i
 
@@ -54,8 +55,8 @@
 	c = checkout
     cb = checkout -b
 
-	# Staging and commits
-	a = add
+
+	# Staging and commits.
 	com = commit
 	unstage = reset HEAD --
 
