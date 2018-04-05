@@ -59,6 +59,7 @@
 
 
 	# Staging and commits.
+	ca = commit -a
 	com = commit
 	unstage = reset HEAD --
 
