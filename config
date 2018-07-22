@@ -1,90 +1,101 @@
 #-- USER ----------------------------------------------------------{{{
 [user]
-	name = Marc Bouchard
-	email = mab.bouchard@gmail.com
+  name = Marc Bouchard
+  email = mab.bouchard@gmail.com
 
 # }}}
 #-- CREDENTIAL ----------------------------------------------------{{{
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 # }}}
 #-- CORE ----------------------------------------------------------{{{
 [core]
-	editor = nvim
-	autocrlf = input
-	excludesfile = /Users/marc/.config/git/.gitignore_global
-	# Print command outputs to the screen if it fits.
-	pager = less -RFX
-	whitespace = blank-at-eol,blank-at-eof,indent-with-non-tab
+  editor = nvim
+  autocrlf = input
+  excludesfile = /Users/marc/.config/git/.gitignore_global
+  # Print command outputs to the screen if it fits.
+  pager = less -RFX
+  whitespace = blank-at-eol,blank-at-eof,tab-in-indent
 
 # }}}
 #-- MERGE ---------------------------------------------------------{{{
 [merge]
-	tool = nvimdiff
+  tool = nvimdiff
 
 # }}}
 #-- DIFF ----------------------------------------------------------{{{
 [diff]
-	algorithm = histogram
+  algorithm = histogram
 
 # }}}
 #-- HELP ----------------------------------------------------------{{{
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 # }}}
 #-- COLOR ---------------------------------------------------------{{{
 [color]
-	ui = auto
+  ui = auto
 
 # }}}
 #-- ALIAS ---------------------------------------------------------{{{
 [alias]
-
-	# Add.
-	a = add
-	aa = add -A
-	ap = add -p
-	ai = add -i
-
-
-	# Branches.
-	b = branch
-	bm = branch --merged
-	bnm = branch --no-merged
-    db = branch -d
-	c = checkout
-    cb = checkout -b
+  #--------------------------------------------------- Add --
+  a = add
+  aa = add -A
+  ap = add -p
+  ai = add -i
+  an = add -N
+  package = add package.json yarn.lock
 
 
-	# Staging and commits.
-	ca = commit -a
-	com = commit
-	unstage = reset HEAD --
+  #---------------------------------------------- Branches --
+  b = branch
+  bm = branch --merged
+  bnm = branch --no-merged
+  db = branch -d
+  c = checkout
+  cb = checkout -b
 
 
-	# Diff.
-	d = diff
-	dp = diff --word-diff --unified=10
-	ds = diff --staged
+  #----------------------------------------------- Staging --
+  u = reset HEAD --
+  # Patch edit staged commits.
+  up = reset -p
 
 
-	#------------------------------------------------------------- Logs --
-	l = log --graph --oneline --all --decorate
-	#
-	# Show last commit meta info.
-	last = log -1 HEAD
-
-	# Custom show last commit changes.
-	so = show --pretty='%C(yellow)%h%Creset |%C(yellow)%d%Creset | %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset %n%n%s'
-
-	# lgz = log --abbrev-commit --graph --decorate --pretty=format:'%t (%an): %s'
+  #----------------------------------------------- Remotes --
+  r = remote
+  rv = remote -v
 
 
-	# Shell commands.
-	qm = "!git checkout $1;git merge @{-1}"
-	append = !git cherry-pick $(git merge-base HEAD $1)..$1
-	undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
+  #----------------------------------------------- Commits --
+  ca = commit -a
+  com = commit
+
+
+  #-------------------------------------------------- Diff --
+  d = diff
+  dp = diff --word-diff --unified=10
+  ds = diff --staged
+
+
+  #-------------------------------------------------- Logs --
+  l = log --graph --oneline --all --decorate
+
+  # Show last commit meta info.
+  last = log -1 HEAD
+
+  # Custom show last commit changes.
+  so = show --pretty='%C(yellow)%h%Creset |%C(yellow)%d%Creset | %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset %n%n%s'
+
+  # lgz = log --abbrev-commit --graph --decorate --pretty=format:'%t (%an): %s'
+
+
+  #---------------------------------------- Shell Commands --
+  qm = "!git checkout $1;git merge @{-1}"
+  append = !git cherry-pick $(git merge-base HEAD $1)..$1
+  undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
 
 # }}}
